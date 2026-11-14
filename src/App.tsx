@@ -1,4 +1,3 @@
-
 import BackgroundDecor from "./components/BackgroundDecor";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
