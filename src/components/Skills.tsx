@@ -1,52 +1,92 @@
 
-import {
-  Code2,
-  Server,
-  BrainCircuit,
-  ArrowUpRight,
-} from "lucide-react";
+import * as SimpleIcons from "simple-icons";
+
+type BrandIcon = {
+  path: string;
+  hex: string;
+};
+
+const iconLibrary = SimpleIcons as unknown as Record<
+  string,
+  BrandIcon | undefined
+>;
 
 const skillGroups = [
   {
-    number: "01",
-    title: "Full Stack Development",
-    description:
-      "Building end-to-end web applications, from user interfaces to backend services and data systems.",
-    icon: Code2,
-    capabilities: [
-      "Frontend Development",
-      "Backend Development",
-      "API Integration",
-      "Database Design",
-      "Web Applications",
+    title: "LANGUAGES",
+    technologies: [
+      { name: "JavaScript", icon: "siJavascript" },
+      { name: "Python", icon: "siPython" },
+      { name: "Java", icon: "siJava" },
+      { name: "C", icon: "siC" },
+      { name: "PHP", icon: "siPhp" },
+      { name: "SQL", icon: "siMysql" },
     ],
   },
   {
-    number: "02",
-    title: "DevOps & Infrastructure",
-    description:
-      "Creating reliable development and deployment workflows with an emphasis on automation and maintainability.",
-    icon: Server,
-    capabilities: [
-      "Deployment Workflows",
-      "CI/CD",
-      "Infrastructure",
-      "Automation",
-      "System Reliability",
+    title: "FRAMEWORKS & LIBRARIES",
+    technologies: [
+      { name: "Next.js", icon: "siNextdotjs" },
+      { name: "React", icon: "siReact" },
+      { name: "Electron", icon: "siElectron" },
+      { name: "Tailwind CSS", icon: "siTailwindcss" },
+      { name: "ShadCN UI", icon: "siShadcnui" },
+      { name: "Express", icon: "siExpress" },
+      { name: "FastAPI", icon: "siFastapi" },
+      { name: "Flask", icon: "siFlask" },
     ],
   },
   {
-    number: "03",
-    title: "AI Engineering",
-    description:
-      "Exploring practical applications of artificial intelligence, intelligent automation and AI-powered products.",
-    icon: BrainCircuit,
-    capabilities: [
-      "AI Integration",
-      "LLM Applications",
-      "Workflow Automation",
-      "Intelligent Systems",
-      "AI-powered Products",
+    title: "RUNTIME, APIs & QUEUES",
+    technologies: [
+      { name: "Node.js", icon: "siNodedotjs" },
+      { name: "REST APIs", icon: null },
+      { name: "WebSockets", icon: null },
+      { name: "BullMQ", icon: null },
+    ],
+  },
+  {
+    title: "AI & MACHINE LEARNING",
+    technologies: [
+      { name: "OpenAI", icon: "siOpenai" },
+      { name: "Groq", icon: "siGroq" },
+      { name: "DeepSeek", icon: "siDeepseek" },
+      { name: "Hugging Face", icon: "siHuggingface" },
+      { name: "YOLOv8", icon: "siUltralytics" },
+      { name: "OpenCV", icon: "siOpencv" },
+    ],
+  },
+  {
+    title: "DATABASES",
+    technologies: [
+      { name: "MongoDB", icon: "siMongodb" },
+      { name: "MySQL", icon: "siMysql" },
+      { name: "Sanity", icon: "siSanity" },
+      { name: "Redis", icon: "siRedis" },
+    ],
+  },
+  {
+    title: "INFRASTRUCTURE & CLOUD",
+    technologies: [
+      { name: "Docker", icon: "siDocker" },
+      { name: "Nginx", icon: "siNginx" },
+      { name: "PM2", icon: null },
+      { name: "GitHub Actions", icon: "siGithubactions" },
+      { name: "Hostinger", icon: "siHostinger" },
+      { name: "Oracle Cloud", icon: "siOracle" },
+      { name: "AWS", icon: "siAmazonaws" },
+      { name: "Vercel", icon: "siVercel" },
+      { name: "Render", icon: "siRender" },
+    ],
+  },
+  {
+    title: "AUTHENTICATION & INTEGRATIONS",
+    technologies: [
+      { name: "JWT", icon: null },
+      { name: "OAuth", icon: null },
+      { name: "Firebase", icon: "siFirebase" },
+      { name: "Meta Graph API", icon: "siMeta" },
+      { name: "Cloudflare Workers", icon: "siCloudflare" },
     ],
   },
 ];
@@ -58,77 +98,66 @@ export default function Skills() {
       className="relative scroll-mt-24 px-6 py-24 sm:px-10 lg:px-16 lg:py-32"
     >
       <div className="mx-auto max-w-[1200px]">
-
-        <div className="mb-14">
-          <p className="mb-5 flex items-center gap-3 font-mono text-xs tracking-[0.25em] text-accent">
-            <span className="h-px w-8 bg-accent" />
-            SKILLS & EXPERTISE
+        {/* Heading */}
+        <div className="mb-16 text-center">
+          <p className="mb-5 font-mono text-xs tracking-[0.25em] text-accent">
+            MY TOOLKIT
           </p>
 
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <h2 className="max-w-2xl font-display text-4xl font-semibold leading-tight tracking-tight text-[#f5f5f5] sm:text-5xl lg:text-6xl">
-              What I bring
-              <br />
-              to the <span className="text-accent">table.</span>
-            </h2>
+          <h2 className="font-display text-5xl font-semibold tracking-tight text-[#f5f5f5] sm:text-6xl lg:text-7xl">
+            Tools & <span className="text-accent">Technologies.</span>
+          </h2>
 
-            <p className="max-w-md text-base leading-8 text-[#a1a1aa]">
-              A multidisciplinary approach to building modern software,
-              reliable systems and intelligent digital products.
-            </p>
-          </div>
+          <p className="mx-auto mt-6 max-w-xl text-base leading-8 text-[#a1a1aa]">
+            Technologies I use to build, integrate and deploy products.
+          </p>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-3">
-          {skillGroups.map((group) => {
-            const Icon = group.icon;
+        {/* Technology grid */}
+        <div className="mx-auto max-w-5xl space-y-10">
+          {skillGroups.map((group) => (
+            <div key={group.title}>
+              <h3 className="mb-4 font-mono text-[10px] tracking-[0.2em] text-[#71717a]">
+                {group.title}
+              </h3>
 
-            return (
-              <article
-                key={group.number}
-                className="group flex h-full flex-col rounded-2xl border border-white/[0.08] bg-[#111111]/75 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-[#171719]/90 sm:p-8"
-              >
-                <div className="mb-10 flex items-center justify-between">
-                  <span className="font-mono text-xs tracking-widest text-[#71717a]">
-                    / {group.number}
-                  </span>
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                {group.technologies.map((technology) => {
+                  const brand = technology.icon
+                    ? iconLibrary[technology.icon]
+                    : undefined;
 
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-accent/20 bg-accent/[0.07] text-accent transition-colors group-hover:bg-accent/15">
-                    <Icon size={23} />
-                  </div>
-                </div>
-
-                <h3 className="font-display text-2xl font-semibold tracking-tight text-[#f5f5f5]">
-                  {group.title}
-                </h3>
-
-                <p className="mt-4 min-h-[100px] text-sm leading-7 text-[#a1a1aa]">
-                  {group.description}
-                </p>
-
-                <div className="my-7 h-px bg-white/[0.08]" />
-
-                <p className="mb-4 font-mono text-[10px] tracking-[0.2em] text-[#71717a]">
-                  CORE CAPABILITIES
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {group.capabilities.map((capability) => (
-                    <span
-                      key={capability}
-                      className="rounded-full border border-white/[0.08] bg-white/[0.02] px-3 py-2 text-xs text-[#c4c4cc] transition-colors group-hover:border-white/[0.12]"
+                  return (
+                    <div
+                      key={technology.name}
+                      className="group flex min-h-[68px] items-center gap-3 rounded-xl border border-white/[0.07] bg-[#111111]/60 px-3 py-3 transition-all duration-200 hover:border-accent/30 hover:bg-[#171719]"
                     >
-                      {capability}
-                    </span>
-                  ))}
-                </div>
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center">
+                        {brand ? (
+                          <svg
+                            viewBox="0 0 24 24"
+                            className="h-[21px] w-[21px] text-[#a1a1aa] transition-colors duration-200 group-hover:text-accent"
+                            fill="currentColor"
+                            aria-hidden="true"
+                          >
+                            <path d={brand.path} />
+                          </svg>
+                        ) : (
+                          <span className="font-mono text-sm text-[#a1a1aa] transition-colors group-hover:text-accent">
+                            {technology.name.slice(0, 2).toUpperCase()}
+                          </span>
+                        )}
+                      </div>
 
-                <div className="mt-auto flex justify-end pt-8 text-[#71717a] transition-colors group-hover:text-accent">
-                  <ArrowUpRight size={19} />
-                </div>
-              </article>
-            );
-          })}
+                      <span className="text-xs font-medium text-[#c4c4cc] transition-colors group-hover:text-[#f5f5f5]">
+                        {technology.name}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
