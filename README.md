@@ -3,7 +3,7 @@
 **Project:** MD Shahid Ansari — Personal Portfolio  
 **Live URL:** [https://md-shahid-ansari.github.io/](https://md-shahid-ansari.github.io/)  
 **Repository:** [https://github.com/md-shahid-ansari/md-shahid-ansari.github.io](https://github.com/md-shahid-ansari/md-shahid-ansari.github.io)  
-**Documentation version:** 1.1  
+**Documentation version:** 1.0.0
 **Last updated:** November 2026
 
 ---
