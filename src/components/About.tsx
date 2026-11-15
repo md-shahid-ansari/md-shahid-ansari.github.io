@@ -1,24 +1,18 @@
 
-import { ArrowUpRight, Code2, Cpu, Workflow } from "lucide-react";
+import { Code2, Cpu, Workflow } from "lucide-react";
 
 const focusAreas = [
   {
     icon: Code2,
-    title: "Full Stack Development",
-    description:
-      "Building modern applications with thoughtful interfaces and reliable backend systems.",
-  },
-  {
-    icon: Workflow,
-    title: "DevOps & Infrastructure",
-    description:
-      "Exploring automation, deployment workflows and scalable infrastructure.",
+    title: "Full-Stack Engineering",
   },
   {
     icon: Cpu,
     title: "AI Engineering",
-    description:
-      "Developing practical AI-powered solutions that address real business problems.",
+  },
+  {
+    icon: Workflow,
+    title: "Infrastructure & Deployment",
   },
 ];
 
@@ -29,90 +23,47 @@ export default function About() {
       className="relative scroll-mt-24 px-6 py-24 sm:px-10 lg:px-16 lg:py-32"
     >
       <div className="mx-auto max-w-[1200px]">
+        {/* Centered heading */}
+        <div className="mx-auto mb-12 max-w-4xl text-center">
 
-        {/* Section heading */}
-        <div className="mb-14">
-          <p className="mb-5 flex items-center gap-3 font-mono text-xs tracking-[0.25em] text-accent">
-            <span className="h-px w-8 bg-accent" />
-            ABOUT ME
-          </p>
-
-          <h2 className="max-w-3xl font-display text-4xl font-semibold leading-tight tracking-tight text-[#f5f5f5] sm:text-5xl lg:text-6xl">
-            Engineering ideas
+          <h2 className="font-display text-5xl font-semibold leading-tight tracking-tight text-[#f5f5f5] sm:text-6xl lg:text-7xl">
+            I build products
             <br />
-            into <span className="text-accent">reality.</span>
+            from <span className="text-accent">idea to deployment.</span>
           </h2>
+
+          <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-[#a1a1aa] sm:text-lg">
+            I'm a Full-Stack & AI Developer who independently builds
+            products, delivers client solutions and tackles complex
+            engineering problems — from application architecture to
+            deployment and infrastructure.
+          </p>
         </div>
 
-        {/* Main content */}
-        <div className="grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-20">
+        {/* What I work on */}
+        <div className="mx-auto mt-16 max-w-5xl">
+          <p className="mb-5 text-center font-mono text-[11px] tracking-[0.2em] text-[#71717a]">
+            WHAT I WORK ON
+          </p>
 
-          {/* Introduction */}
-          <div>
-            <p className="text-lg leading-9 text-[#d4d4d8]">
-              I'm a developer interested in building useful digital
-              products through software engineering, automation and
-              artificial intelligence.
-            </p>
-
-            <p className="mt-6 text-base leading-8 text-[#a1a1aa]">
-              My work spans full-stack development, DevOps and AI
-              engineering. I enjoy understanding problems, designing
-              practical solutions and bringing them to life through code.
-            </p>
-
-            <p className="mt-6 text-base leading-8 text-[#a1a1aa]">
-              I believe good engineering is about more than writing
-              code. It's about creating reliable, maintainable and
-              meaningful products that solve real-world problems.
-            </p>
-
-            <a
-              href="#projects"
-              className="group mt-9 inline-flex items-center gap-2 text-sm font-semibold text-accent transition-colors hover:text-[#d0ff9c]"
-            >
-              Explore what I'm building
-              <ArrowUpRight
-                size={17}
-                className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
-              />
-            </a>
-          </div>
-
-          {/* Focus areas */}
-          <div className="space-y-4">
-            {focusAreas.map((area, index) => {
+          <div className="grid grid-cols-1 divide-y divide-white/[0.08] border-y border-white/[0.08] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+            {focusAreas.map((area) => {
               const Icon = area.icon;
 
               return (
                 <div
                   key={area.title}
-                  className="group rounded-2xl border border-white/[0.08] bg-[#111111]/70 p-6 transition-all duration-300 hover:border-accent/30 hover:bg-[#171719]/80"
+                  className="flex items-center justify-center gap-3 px-4 py-6"
                 >
-                  <div className="flex items-start gap-5">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-accent/20 bg-accent/[0.07] text-accent">
-                      <Icon size={21} />
-                    </div>
+                  <Icon size={19} className="shrink-0 text-accent" />
 
-                    <div>
-                      <p className="mb-2 font-mono text-[11px] tracking-widest text-[#71717a]">
-                        0{index + 1}
-                      </p>
-
-                      <h3 className="font-display text-lg font-semibold text-[#f5f5f5]">
-                        {area.title}
-                      </h3>
-
-                      <p className="mt-2 text-sm leading-7 text-[#a1a1aa]">
-                        {area.description}
-                      </p>
-                    </div>
-                  </div>
+                  <span className="text-sm font-medium text-[#e4e4e7]">
+                    {area.title}
+                  </span>
                 </div>
               );
             })}
           </div>
-
         </div>
       </div>
     </section>
