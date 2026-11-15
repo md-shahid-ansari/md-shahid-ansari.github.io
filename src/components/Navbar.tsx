@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
@@ -22,7 +21,7 @@ export default function Navbar() {
 
         {/* Brand */}
         <a
-          href="#home"
+          href="#about"
           onClick={closeMenu}
           aria-label="Go to home"
           className="font-display text-[25px] font-bold tracking-[-1.5px] text-[#f5f5f5]"

@@ -30,7 +30,6 @@ function Linkedin({ size = 18 }: { size?: number }) {
 }
 
 const footerLinks = [
-  { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
@@ -49,7 +48,7 @@ export default function Footer() {
           {/* Identity */}
           <div className="max-w-sm">
             <a
-              href="#home"
+              href="#about"
               className="font-display text-2xl font-bold tracking-[-1.5px] text-[#f5f5f5]"
             >
               MD SHAHID ANSARI<span className="text-accent">.</span>
@@ -128,7 +127,7 @@ export default function Footer() {
           </p>
 
           <a
-            href="#home"
+            href="#about"
             className="group inline-flex items-center gap-2 text-xs text-[#a1a1aa] transition-colors hover:text-accent"
           >
             Back to top
