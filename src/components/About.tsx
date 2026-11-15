@@ -20,7 +20,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative scroll-mt-24 px-6 py-24 sm:px-10 lg:px-16 lg:py-32"
+      className="relative scroll-mt-14 px-6 py-14 sm:px-10 lg:px-16 lg:py-22"
     >
       <div className="mx-auto max-w-[1200px]">
         {/* Centered heading */}

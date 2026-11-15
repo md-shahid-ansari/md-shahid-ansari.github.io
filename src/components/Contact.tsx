@@ -86,12 +86,12 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative scroll-mt-24 px-6 py-24 sm:px-10 lg:px-16 lg:py-32"
+      className="relative scroll-mt-14 px-6 pt-14 pb-7 sm:px-10 lg:px-16 lg:pt-22 lg:pb-11"
     >
       <div className="mx-auto max-w-[1200px]">
 
         {/* Main invitation */}
-        <div className="border-t border-white/[0.09] pt-12 sm:pt-16">
+        <div>
           <p className="mb-8 flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-accent">
             <span className="h-px w-7 bg-accent" />
             GET IN TOUCH
@@ -181,7 +181,7 @@ export default function Contact() {
         </div>
 
         {/* GitHub */}
-        <div id="github" className="mt-14 scroll-mt-24 border-t border-white/[0.09] pt-8">
+        <div id="github" className="mt-14 scroll-mt-18 border-t border-white/[0.09] pt-8">
           <div className="flex items-center justify-between">
             <p className="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-accent">
               <span className="h-px w-7 bg-accent" />
@@ -236,11 +236,7 @@ export default function Contact() {
         </div>
 
         {/* Elsewhere */}
-        <div className="mt-14 border-t border-white/[0.09] pt-8">
-          <p className="mb-5 font-mono text-[11px] tracking-[0.18em] text-[#71717a]">
-            ELSEWHERE
-          </p>
-
+        <div className="pt-20">
           <div className="flex flex-wrap items-center gap-x-7 gap-y-5">
             {socialProfiles.map((profile) => (
               <a
