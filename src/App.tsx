@@ -1,10 +1,10 @@
-import BackgroundDecor from "./components/BackgroundDecor";
-import Navbar from "./components/Navbar";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import BackgroundDecor from "./BackgroundDecor";
+import Navbar from "./Navbar";
+import About from "./About";
+import Skills from "./Skills";
+import Projects from "./Projects";
+import Contact from "./Contact";
+import Footer from "./Footer";
 
 function App() {
   return (
