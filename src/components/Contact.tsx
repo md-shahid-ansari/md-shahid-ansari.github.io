@@ -1,5 +1,86 @@
 
 import { ArrowUpRight, Mail } from "lucide-react";
+import {
+  siUpwork,
+  siFreelancer,
+  siGithub,
+  siDiscord,
+  siX,
+  siReddit,
+} from "simple-icons";
+import type { SimpleIcon } from "simple-icons";
+
+function BrandMark({
+  icon,
+  size = 18,
+}: {
+  icon: SimpleIcon;
+  size?: number;
+}) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d={icon.path} />
+    </svg>
+  );
+}
+
+function Linkedin({ size = 18 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.34H4.97V9.02h2.96v9.32ZM6.45 7.75a1.72 1.72 0 1 1 .02-3.44 1.72 1.72 0 0 1-.02 3.44Zm11.89 10.59h-2.96V13.8c0-1.08-.02-2.47-1.51-2.47-1.52 0-1.75 1.18-1.75 2.39v4.62H9.16V9.02h2.84v1.27h.04c.4-.73 1.36-1.5 2.8-1.5 3 0 3.55 1.97 3.55 4.53v5.02Z" />
+    </svg>
+  );
+}
+
+const freelanceProfiles = [
+  {
+    name: "Upwork",
+    description: "Hire me for your next project",
+    url: "https://www.upwork.com/freelancers/~01bbd60304badc1f69",
+    icon: siUpwork,
+  },
+  {
+    name: "Freelancer",
+    description: "View my freelance profile",
+    url: "https://www.freelancer.com/u/shahid91616",
+    icon: siFreelancer,
+  },
+];
+
+const socialProfiles = [
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/md-shahid-ansari-au",
+    icon: null,
+  },
+  {
+    name: "Discord",
+    url: "https://discord.com/users/1179309453846261814",
+    icon: siDiscord,
+  },
+  {
+    name: "X",
+    url: "https://x.com/md_shahid_ai",
+    icon: siX,
+  },
+  {
+    name: "Reddit",
+    url: "https://www.reddit.com/user/fullstack_shahid",
+    icon: siReddit,
+  },
+];
 
 export default function Contact() {
   return (
@@ -8,54 +89,187 @@ export default function Contact() {
       className="relative scroll-mt-24 px-6 py-24 sm:px-10 lg:px-16 lg:py-32"
     >
       <div className="mx-auto max-w-[1200px]">
-        <div className="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-[#111111]/80 px-7 py-14 sm:px-12 sm:py-20 lg:px-16">
 
-          {/* Ambient glow */}
-          <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-accent/[0.08] blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-[#7d4b23]/[0.12] blur-3xl" />
+        {/* Main invitation */}
+        <div className="border-t border-white/[0.09] pt-12 sm:pt-16">
+          <p className="mb-8 flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-accent">
+            <span className="h-px w-7 bg-accent" />
+            GET IN TOUCH
+          </p>
 
-          <div className="relative">
-            <p className="mb-7 flex items-center gap-3 font-mono text-xs tracking-[0.25em] text-accent">
-              <span className="h-px w-8 bg-accent" />
-              GET IN TOUCH
-            </p>
+          <h2 className="max-w-4xl font-display text-4xl font-medium leading-[1.12] tracking-tight text-[#f5f5f5] sm:text-5xl lg:text-7xl">
+            Have an idea?
+            <br />
+            Let's build something{" "}
+            <span className="text-accent">meaningful.</span>
+          </h2>
 
-            <h2 className="max-w-4xl font-display text-5xl font-semibold leading-[1.1] tracking-tight text-[#f5f5f5] sm:text-6xl lg:text-7xl">
-              Have an idea?
-              <br />
-              Let's build
-              <span className="text-accent"> something.</span>
-            </h2>
+          <p className="mt-7 max-w-xl text-base leading-8 text-[#a1a1aa]">
+            Whether it's an interesting project, a technical challenge
+            or an opportunity to collaborate, I'd love to hear from you.
+          </p>
+        </div>
 
-            <p className="mt-8 max-w-xl text-base leading-8 text-[#a1a1aa] sm:text-lg">
-              I'm open to conversations about interesting projects,
-              software engineering, AI and opportunities to build
-              meaningful digital products.
-            </p>
+        {/* Direct contact */}
+        <div className="mt-14 border-y border-white/[0.09] py-7 sm:mt-16 sm:py-9">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="mb-2 font-mono text-[11px] tracking-[0.18em] text-[#71717a]">
+                DIRECT CONTACT
+              </p>
+
+              <a
+                href="mailto:sajarsadaf2000@gmail.com"
+                className="group inline-flex items-center gap-2 text-lg font-medium text-[#f5f5f5] transition-colors hover:text-accent sm:text-xl"
+              >
+                sajarsadaf2000@gmail.com
+                <ArrowUpRight
+                  size={17}
+                  className="text-accent transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </a>
+            </div>
 
             <a
-              href="mailto:sajarsadaf2000@example.com"
-              className="group mt-10 inline-flex items-center gap-3 rounded-full bg-accent px-7 py-4 text-sm font-semibold text-[#0b0b0c] transition-all duration-300 hover:-translate-y-1 hover:bg-[#c8ff82]"
+              href="mailto:sajarsadaf2000@gmail.com"
+              className="inline-flex w-fit items-center gap-2 rounded-full border border-white/[0.12] px-5 py-3 text-sm font-medium text-[#f5f5f5] transition-all duration-300 hover:border-accent/50 hover:text-accent"
             >
-              <Mail size={18} />
-              Say Hello
-              <ArrowUpRight
-                size={18}
-                className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-              />
+              <Mail size={16} />
+              Send an email
+              <ArrowUpRight size={15} />
             </a>
-
-            <div className="mt-16 flex flex-col gap-4 border-t border-white/[0.08] pt-7 sm:flex-row sm:items-center sm:justify-between">
-              <p className="font-mono text-[11px] tracking-wider text-[#71717a]">
-                HAVE A PROJECT IN MIND? LET'S TALK.
-              </p>
-
-              <p className="text-sm text-[#a1a1aa]">
-                Building ideas into reality.
-              </p>
-            </div>
           </div>
         </div>
+
+        {/* Freelance opportunities */}
+        <div className="mt-16">
+          <p className="mb-6 font-mono text-[11px] tracking-[0.18em] text-[#71717a]">
+            FREELANCE OPPORTUNITIES
+          </p>
+
+          <div className="grid gap-x-12 sm:grid-cols-2">
+            {freelanceProfiles.map((profile) => (
+              <a
+                key={profile.name}
+                href={profile.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between border-t border-white/[0.09] py-6 transition-colors hover:border-accent/50"
+              >
+                <div className="flex items-center gap-4">
+                  <span className="text-[#a1a1aa] transition-colors group-hover:text-accent">
+                    <BrandMark icon={profile.icon} size={25} />
+                  </span>
+
+                  <div>
+                    <p className="text-base font-medium text-[#f5f5f5] transition-colors group-hover:text-accent">
+                      {profile.name}
+                    </p>
+                    <p className="mt-1 text-xs text-[#71717a]">
+                      {profile.description}
+                    </p>
+                  </div>
+                </div>
+
+                <ArrowUpRight
+                  size={18}
+                  className="text-[#71717a] transition-all group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-accent"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* GitHub */}
+        <div id="github" className="mt-14 scroll-mt-24 border-t border-white/[0.09] pt-8">
+          <div className="flex items-center justify-between">
+            <p className="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-accent">
+              <span className="h-px w-7 bg-accent" />
+              CONNECT & EXPLORE
+            </p>
+
+            <svg
+              role="img"
+              viewBox="0 0 24 24"
+              width="21"
+              height="21"
+              fill="currentColor"
+              className="text-white/50"
+              aria-label="GitHub"
+            >
+              <path d={siGithub.path} />
+            </svg>
+          </div>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-[1.3fr_0.7fr] md:items-end">
+
+            <div>
+              <h2 className="font-display text-4xl font-medium leading-[1.15] tracking-tight text-[#f5f5f5] sm:text-5xl lg:text-6xl">
+                Open source is where
+                <br />
+                ideas meet <span className="text-accent">engineering.</span>
+              </h2>
+            </div>
+
+            <div className="max-w-sm md:justify-self-end">
+              <p className="text-sm leading-7 text-[#a1a1aa] sm:text-base">
+                Explore my GitHub for projects, experiments and
+                the work behind what I build.
+              </p>
+
+              <a
+                href="https://github.com/md-shahid-ansari"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group mt-7 inline-flex items-center gap-2 border-b border-accent/40 pb-2 text-sm font-medium text-accent transition-colors duration-300 hover:border-accent hover:text-[#c8ff82]"
+              >
+                Explore my GitHub
+                <ArrowUpRight
+                  size={16}
+                  className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* Elsewhere */}
+        <div className="mt-14 border-t border-white/[0.09] pt-8">
+          <p className="mb-5 font-mono text-[11px] tracking-[0.18em] text-[#71717a]">
+            ELSEWHERE
+          </p>
+
+          <div className="flex flex-wrap items-center gap-x-7 gap-y-5">
+            {socialProfiles.map((profile) => (
+              <a
+                key={profile.name}
+                href={profile.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit my ${profile.name} profile`}
+                className="group inline-flex items-center gap-2 text-sm text-[#a1a1aa] transition-colors hover:text-accent"
+              >
+                <span className="transition-transform group-hover:-translate-y-0.5">
+                  {profile.name === "LinkedIn" ? (
+                    <Linkedin size={17} />
+                  ) : (
+                    <BrandMark icon={profile.icon!} size={17} />
+                  )}
+                </span>
+
+                <span>{profile.name}</span>
+
+                <ArrowUpRight
+                  size={12}
+                  className="opacity-0 transition-opacity group-hover:opacity-100"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
