@@ -1,6 +1,7 @@
 import BackgroundDecor from "./BackgroundDecor";
 import Navbar from "./Navbar";
 import About from "./About";
+import Services from "./Services";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
@@ -21,6 +22,7 @@ function App() {
 
       <main id="main-content" tabIndex={-1}>
         <About />
+        <Services />
         <Skills />
         <Projects />
         <Contact />
