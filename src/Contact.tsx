@@ -183,7 +183,7 @@ export default function Contact() {
                     {profile.name === "Contra" ? (
                     <Contra size={25} />
                       ) : (
-                      <BrandMark icon={profile.icon} size={25} />
+                      <BrandMark icon={profile.icon!} size={25} />
                       )}
                   </span>
 
