@@ -57,6 +57,49 @@ const products: Project[] = [
       },
     ],
   },
+  {
+    name: "Sana E Muhammad ﷺ",
+    category: "DYNAMIC ISLAMIC CONTENT PLATFORM",
+    description:
+      "A lightweight Islamic devotional platform featuring Naat Shareef, Durood Shareef, Salat o Salam, Hamd, Manqabat and Dua, powered by a JSON-based content management system that automatically generates static pages, navigation and SEO metadata.",
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP 8.1+",
+      "JSON",
+      "Static Site Generation",
+      "JSON-LD",
+    ],
+    image: "/mockup/sana-e-muhammad.png",
+    link: "https://sanaemuhammad.com",
+  },
+  {
+    name: "SeeFile",
+    category: "OPEN-SOURCE DOCUMENT VIEWER",
+    description:
+      "A privacy-first, browser-based document viewer that lets users read PDFs, Word documents, spreadsheets, presentations and code files locally without uploading them to a server.",
+    technologies: [
+      "JavaScript ES Modules",
+      "HTML",
+      "CSS",
+      "PDF.js",
+      "SheetJS",
+      "JSZip",
+      "docx-preview",
+    ],
+    image: "/mockup/see-file.png",
+    links: [
+      {
+        label: "Live Demo",
+        url: "https://md-shahid-ansari.github.io/see-file/",
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/md-shahid-ansari/see-file",
+      },
+    ],
+  },
 ];
 
 const freelance: Project[] = [
