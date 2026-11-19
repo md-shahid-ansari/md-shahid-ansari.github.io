@@ -103,6 +103,24 @@ const products: Project[] = [
 ];
 
 const freelance: Project[] = [
+
+  {
+    name: "Business Book",
+    category: "DESKTOP BUSINESS MANAGEMENT SOFTWARE",
+    description:
+      "A custom offline business management application built for handling daily accounting and business operations. It brings invoicing, purchases, expenses, payments, party ledgers, GST reports and PDF document generation into one desktop application, with local data storage and backup management.",
+    technologies: [
+      "Electron",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "SQLite",
+      "Drizzle ORM",
+      "Tailwind CSS",
+      "ExcelJS",
+    ],
+    image: "/mockup/business-book.png",
+  },
   {
     name: "Biziffy",
     category: "BUSINESS LISTING & LOCAL SEO",
