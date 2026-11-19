@@ -44,6 +44,22 @@ function Linkedin({ size = 18 }: { size?: number }) {
   );
 }
 
+function Contra({ size = 15 } : { size?: number }){
+  return ( 
+    <svg 
+      width={size}
+      height={size}
+      viewBox="0 0 100 100">
+      <g fill="currentColor">
+        <path d="M5 48 C22 43 43 22 48 5 L48 48 Z"/>
+        <path d="M52 5 C57 22 78 43 95 48 L52 48 Z"/>
+        <path d="M5 52 C22 57 43 78 48 95 L48 52 Z"/>
+        <path d="M52 52 L95 52 C78 57 57 78 52 95 Z"/>
+      </g>
+    </svg>
+  )
+}
+
 const freelanceProfiles = [
   {
     name: "Upwork",
@@ -56,6 +72,12 @@ const freelanceProfiles = [
     description: "View my freelance profile",
     url: "https://www.freelancer.com/u/shahid91616",
     icon: siFreelancer,
+  },
+  {
+    name: "Contra",
+    description: "Contact me on contra",
+    url: "https://contra.com/md_shahid_ansari",
+    icon: null,
   },
 ];
 
@@ -158,7 +180,11 @@ export default function Contact() {
               >
                 <div className="flex items-center gap-4">
                   <span className="text-[#a1a1aa] transition-colors group-hover:text-accent">
-                    <BrandMark icon={profile.icon} size={25} />
+                    {profile.name === "Contra" ? (
+                    <Contra size={25} />
+                      ) : (
+                      <BrandMark icon={profile.icon} size={25} />
+                      )}
                   </span>
 
                   <div>
